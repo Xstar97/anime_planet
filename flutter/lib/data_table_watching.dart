@@ -1,6 +1,7 @@
 import 'package:anime_planet/logic/CounterBloc.dart';
 import 'package:anime_planet/logic/RateBloc.dart';
 import 'package:anime_planet/logic/StatusBloc.dart';
+import 'package:anime_planet/logic/anime_tag.dart';
 import 'package:anime_planet/logic/anime_type.dart';
 import 'package:anime_planet/widgets/table/cells/data_cell_drop_down_status.dart';
 import 'package:anime_planet/widgets/table/cells/data_cell_rating_bar.dart';
@@ -23,7 +24,7 @@ class ModelWatching{
     this.rating);
 
   String title;
-  String type;
+  int type;
   String year;
   double avg;
   StatusModel status;
@@ -36,8 +37,8 @@ class ModelWatching{
 class WatchingDataSource extends DataTableSource {
 
   final List<ModelWatching> _watching = <ModelWatching>[
-    ModelWatching('One Punch Man', AnimeTypes().typeTV, '2016', 4.1, StatusBloc.watching, 11, 13, 5.0),
-    ModelWatching('High School DXD', AnimeTypes().typeTV, '2012', 5.0, StatusBloc.watching, 10, 12, 4.9),
+    ModelWatching('One Punch Man', AnimeTypes.TV, '2016', 4.1, StatusBloc.watching, 11, 13, 5.0),
+    ModelWatching('High School DXD', AnimeTypes.TV, '2012', 5.0, StatusBloc.watching, 10, 12, 4.9),
   ];
 
 
@@ -69,13 +70,15 @@ class WatchingDataSource extends DataTableSource {
     RateBloc _rateBloc = new RateBloc(model: RateModel(watching.rating, 5.0));
 
     _statusBloc.setStatus(watching.status);
-
+    
     var rating = DataCellRatingBar(rateBloc: _rateBloc,);
 
     var status = DataCellDropDownStatus(bloc: _statusBloc,);
     var cellEpisodeDropDownSelected = WatchingDataCellDropDownEpisodes(counterBloc: _counterBloc,);
     var cellEpisodeButtonCounter = WatchingDataCellEpisodeCounter(counterBloc: _counterBloc);
 
+    var data = "${AnimeTags().getTag(211)}";
+    print(data);
 var watchingTitle = DataCellTitle(title: watching.title,);
 
     return DataRow.byIndex(

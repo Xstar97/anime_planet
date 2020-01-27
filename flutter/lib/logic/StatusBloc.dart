@@ -26,7 +26,7 @@ class StatusBloc{
     dropped,
     wontWatch
   ];
-  StatusModel model = StatusModel('remove', Colors.black);
+  StatusModel model = remove;
 
   BehaviorSubject<StatusModel> _subjectStatus;
 

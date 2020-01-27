@@ -1,0 +1,23 @@
+{
+  "@@last_modified": "2020-01-18T05:11:58.188838",
+  "title": "Anime-Planet",
+  "@title": {
+    "description": "project title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "hello": "Hello World",
+  "@hello": {
+    "description": "hello world message",
+    "type": "text",
+    "placeholders": {}
+  },
+  "text": "You have pushed the button {counter} times:",
+  "@text": {
+    "description": "Our Text to localize",
+    "type": "text",
+    "placeholders": {
+      "counter": {}
+    }
+  }
+}

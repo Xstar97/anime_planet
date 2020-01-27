@@ -1,11 +1,11 @@
 
 class AnimeTypes{
-  var typeDVDSpecial='DVD Special';
-  var typeMovie ='Movie';
-  var typeMusic ='Music';
-  var typeVideo ='Video';
-  var typeOther ='Other';
-  var typeTV = 'TV';
-  var typeTVSpecial = 'TV Special';
-  var typeWeb = 'Web';
+  static const DVDSpecial=8;
+  static const Movie=2;
+  static const Music=7;
+  static const Video=4;
+  static const Other=1;
+  static const TV=6;
+  static const TVSpecial=3;
+  static const Web=5;
 }
